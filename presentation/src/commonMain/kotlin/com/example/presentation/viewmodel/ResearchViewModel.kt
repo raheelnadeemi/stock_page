@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class ResearchViewModel(val researchUseCase: ResearchUseCase): ViewModel() {
 
+
     private val _research = MutableStateFlow<List<ResearchCall>>(emptyList())
     val research: StateFlow<List<ResearchCall>> = _research.asStateFlow()
 
@@ -24,4 +25,17 @@ class ResearchViewModel(val researchUseCase: ResearchUseCase): ViewModel() {
             _research.value = researchUseCase.getStaticResearchCalls()
         }
     }
+
+    /* Junior developer code for code review and it notes
+
+    var researchCalls = mutableListOf<String>()
+
+    fun fetchCalls() {
+        GlobalScope.launch {
+            val result = api.getCalls() // suspending function
+            researchCalls = result
+        }
+    }
+
+     */
 }
