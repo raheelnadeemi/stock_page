@@ -18,7 +18,7 @@ class MarketRepositoryImpl(
         return marketDataSource.streamRawMarketData().map { it.toDomainList() }
     }
 
-    override suspend fun getStaticResearchCalls(): List<ResearchCall> {
-        return researchDataSource.getRawResearchCalls().toDomainList()
+    override fun getStaticResearchCalls(): Flow<List<ResearchCall>> {
+        return researchDataSource.getRawResearchCalls().map { it.toDomainList() }
     }
 }

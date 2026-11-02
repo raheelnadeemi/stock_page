@@ -42,5 +42,11 @@ kotlin {
                 implementation(libs.kotlinx.serialization.json)
             }
         }
+        commonTest {
+            dependencies {
+                implementation(libs.kotlin.test)
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
+            }
+        }
     }
 }

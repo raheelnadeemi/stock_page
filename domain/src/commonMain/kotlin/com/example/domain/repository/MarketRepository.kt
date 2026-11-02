@@ -5,8 +5,7 @@ import com.example.domain.model.Ticker
 import kotlinx.coroutines.flow.Flow
 
 interface MarketRepository {
-
     fun streamLiveMarketData(): Flow<List<Ticker>>
-    suspend fun getStaticResearchCalls(): List<ResearchCall>
+    fun getStaticResearchCalls(): Flow<List<ResearchCall>>
 
 }
