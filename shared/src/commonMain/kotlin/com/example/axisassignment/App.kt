@@ -10,7 +10,6 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 @Preview
 fun App() {
-
     val marketViewModel: MarketViewModel = koinViewModel()
     val researchViewModel: ResearchViewModel = koinViewModel()
     LiveMarketScreen(marketViewModel, researchViewModel)
